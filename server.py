@@ -1,13 +1,6 @@
 from flask import Flask, render_template, request, flash, redirect, session
 
-def is_person(person):
-    person = person.strip()
-    if person:
-        return True
-    else:
-        return False 
-
-      
+from helpers import is_person
 
 
 app = Flask(__name__)
