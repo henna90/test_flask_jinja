@@ -1,24 +1,33 @@
 <!doctype html>
     <html>
     <head>
-      <title>Test Application</title>
+        <title>Test Application</title>
     </head>
-    <body>
-      <h1>Welcome</h1>
+    <body style="text-align: center;">
+        {% for message in get_flashed_messages() %}
+            {{ message }}
+    
+        {% endfor %}
+      <h1 style="text-align: center;">Welcome</h1>
       
     <div>
       {%if person%}
-      Hello {{person}}
+
+      <h1 style="text-align: center; "> Hi, {{person}} </h1>
       
       {%else%}
-        Hello, 
+      
+
+        <div style="text-align:center; display: inline-block;border: 10px solid grey; ">
         <form method="POST" action="/">
-            What's your name?
+            Hello, What's your name?
             <input type="text" name="person"><br>
             <input type="submit">
         </form>
+    </div>
     {% endif %}  
         
     </div>
     </body>
+
     </html>
