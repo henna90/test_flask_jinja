@@ -66,6 +66,7 @@ jobs:
           destination: test-reports
 
   deploy:
+    executor: heroku/default
     steps:
       - checkout
       - run:
