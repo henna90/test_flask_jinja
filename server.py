@@ -8,9 +8,6 @@ app = Flask(__name__)
 
 app.secret_key = "ABC"  
 
-# @app.route('/')
-# def index_page():
-#     return render_template('index.html')
 
 @app.route('/', methods=['GET','POST'])
 def greet_person():
