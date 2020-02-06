@@ -27,6 +27,7 @@ class TestFlaskRoutes(unittest.TestCase):
 
         # Compare result.data with assert method
         self.assertIn(b'<h1>Welcome</h1>', result.data)
+        self.assertEqual(result.status_code, 200)
 
     def test_form(self):
         """Test that / route processes form data correctly."""
@@ -35,23 +36,8 @@ class TestFlaskRoutes(unittest.TestCase):
         server.app.config['TESTING'] = True
         result = client.post('/', data={'person': 'Henna'})
         self.assertIn(b'Henna', result.data)  
-
-class MyTest(unittest.TestCase):
-    def test_index(self):
-        client = server.app.test_client()
-        server.app.config['TESTING'] = True
-
-        result = client.get('/')
-        self.assertEqual(result.status_code, 200)  
-
-    def test_index_post(self):
-        client = server.app.test_client()
-        server.app.config['TESTING'] = True
-
-        result = client.post('/', data={'person': 'Henna'})
-        self.assertEqual(result.status_code, 200)     
-
-
+        self.assertEqual(result.status_code, 200)
+    
 if __name__ == "__main__":
     unittest.main(
         # testRunner=xmlrunner.XMLTestRunner(output=os.environ.get('CIRCLE_TEST_REPORTS','test-reports')),
