@@ -17,8 +17,8 @@ def greet_person():
     else :
         person = request.form['person'] 
         if is_person(person):
-            session['person'] = person
-        # person = request.args.get("person")
+            # session['person'] = person
+        
             return render_template('index.html', person=person)  
         else:
             flash("You enetered an empty string. Please enter your name again")
