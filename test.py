@@ -9,8 +9,8 @@ class TestHelpers(unittest.TestCase):
     def test_is_person(self):
         """Test adder function."""
 
-#         self.assertEqual(helpers.is_person('Henna'), True)
-        self.assertEqual(helpers.is_person('. '), True)
+        self.assertEqual(helpers.is_person('Henna'), True)
+#         self.assertEqual(helpers.is_person('. '), True)
 
 
 class TestFlaskRoutes(unittest.TestCase):
@@ -27,8 +27,8 @@ class TestFlaskRoutes(unittest.TestCase):
         result = client.get('/')
 
         # Compare result.data with assert method
-#         self.assertIn(b'<h1>Welcome</h1>', result.data)
-        self.assertIn(b'<h1>Bob</h1>', result.data)
+        self.assertIn(b'<h1>Welcome</h1>', result.data)
+#         self.assertIn(b'<h1>Bob</h1>', result.data)
         self.assertEqual(result.status_code, 200)
 
     def test_form(self):
