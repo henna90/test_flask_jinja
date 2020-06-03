@@ -13,6 +13,21 @@ class TestHelpers(unittest.TestCase):
 
         self.assertEqual(helpers.is_person('Henna'), True)
 #         self.assertEqual(helpers.is_person('. '), True)
+    def a(self):
+        """Test adder function."""
+
+        self.assertEqual(helpers.is_person('Henna'), True)
+    def b(self):
+        """Test adder function."""
+
+        self.assertEqual(helpers.is_person('Henna'), True)
+#         self.assertEqual(helpers.is_person('. '), True)
+    def z(self):
+        """Test adder function."""
+
+        self.assertEqual(helpers.is_person('Henna'), True)        
+        
+        
 
 
 class TestFlaskRoutes(unittest.TestCase):
@@ -58,13 +73,59 @@ class TestFlaskRoutes(unittest.TestCase):
         server.app.config['TESTING'] = True
         result = client.post('/', data={'person': 'Henna'})
         self.assertIn(b'Henna', result.data)  
-        self.assertEqual(result.status_code, 200)  
+        self.assertEqual(result.status_code, 200)
+        
+        
+    def A(self):
+        """Make sure index page returns correct HTML."""
+
+        # Create a test client
+        client = server.app.test_client()
+        server.app.config['TESTING'] = True
+
+            # Use the test client to make requests
+        result = client.get('/')
+
+        # Compare result.data with assert method
+        self.assertIn(b'<h1>Welcome</h1>', result.data)
+#         self.assertIn(b'<h1>Bob</h1>', result.data)
+        self.assertEqual(result.status_code, 200)
+
+    def B(self):
+        """Test that / route processes form data correctly."""
+
+        client = server.app.test_client()
+        server.app.config['TESTING'] = True
+        result = client.post('/', data={'person': 'Henna'})
+        self.assertIn(b'Henna', result.data)  
+        self.assertEqual(result.status_code, 200)
+    def Z(self):
+        """Make sure index page returns correct HTML."""
+
+        # Create a test client
+        client = server.app.test_client()
+        server.app.config['TESTING'] = True
+
+            # Use the test client to make requests
+        result = client.get('/')
+
+        # Compare result.data with assert method
+        self.assertIn(b'<h1>Welcome</h1>', result.data)
+#         self.assertIn(b'<h1>Bob</h1>', result.data)
+        self.assertEqual(result.status_code, 200)
+
+    def D(self):
+        """Test that / route processes form data correctly."""
+
+        client = server.app.test_client()
+        server.app.config['TESTING'] = True
+        result = client.post('/', data={'person': 'Henna'})
+        self.assertIn(b'Henna', result.data)  
+        self.assertEqual(result.status_code, 200)
           
 
 
-    
-
-
+   
     
 if __name__ == "__main__":
     unittest.main(
