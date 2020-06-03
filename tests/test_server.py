@@ -1,16 +1,16 @@
 import server
 import unittest
 import xmlrunner
-import helpers
+# import helpers
 
-class TestHelpers(unittest.TestCase):
-    """unit tests: helper functions."""
+# class TestHelpers(unittest.TestCase):
+#     """unit tests: helper functions."""
 
-    def test_is_person(self):
-        """Test adder function."""
+#     def test_is_person(self):
+#         """Test adder function."""
 
-        self.assertEqual(helpers.is_person('Henna'), True)
-#         self.assertEqual(helpers.is_person('. '), True)
+#         self.assertEqual(helpers.is_person('Henna'), True)
+# #         self.assertEqual(helpers.is_person('. '), True)
 
 
 class TestFlaskRoutes(unittest.TestCase):
