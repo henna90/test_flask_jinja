@@ -1,4 +1,4 @@
-import server
+from ./server import server
 import unittest
 import xmlrunner
 # import helpers
