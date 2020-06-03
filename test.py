@@ -42,7 +42,7 @@ class TestFlaskRoutes(unittest.TestCase):
         self.assertIn(b'Henna', result.data)  
         self.assertEqual(result.status_code, 200)
 
-        def test_test(self):
+    def test_test(self):
         """Test that / route processes form data correctly."""
 
         client = server.app.test_client()
@@ -51,7 +51,7 @@ class TestFlaskRoutes(unittest.TestCase):
         self.assertIn(b'Henna', result.data)  
         self.assertEqual(result.status_code, 200)  
 
-        def fake_test(self):
+    def fake_test(self):
         """Test that / route processes form data correctly."""
 
         client = server.app.test_client()
@@ -63,27 +63,6 @@ class TestFlaskRoutes(unittest.TestCase):
 
 
     
-if __name__ == "__main__":
-    unittest.main(
-        # testRunner=xmlrunner.XMLTestRunner(output=os.environ.get('CIRCLE_TEST_REPORTS','test-reports')),
-        testRunner=xmlrunner.XMLTestRunner(output='test-reports'),
-        # these make sure that some options that are not applicable
-        # remain hidden from the help menu.
-        failfast=False, buffer=False, catchbreak=False)        
-
-        # Compare result.data with assert method
-        self.assertIn(b'<h1>Welcome</h1>', result.data)
-#         self.assertIn(b'<h1>Bob</h1>', result.data)
-        self.assertEqual(result.status_code, 200)
-
-    def test_form(self):
-        """Test that / route processes form data correctly."""
-
-        client = server.app.test_client()
-        server.app.config['TESTING'] = True
-        result = client.post('/', data={'person': 'Henna'})
-        self.assertIn(b'Henna', result.data)  
-        self.assertEqual(result.status_code, 200)
 
 
     
