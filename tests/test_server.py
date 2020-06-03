@@ -1,4 +1,4 @@
-import server
+import server from './server.py'
 import unittest
 import xmlrunner
 # import helpers
