@@ -4,9 +4,15 @@ workflows:
     jobs:
       - build
       - deploy:
-          type: approval  
           requires:
             - build
+  second_workflow:
+    jobs:
+      - build
+      - deploy:
+          type: approval  
+          requires:
+            - build            
 
 
 version: 2
