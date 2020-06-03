@@ -6,9 +6,14 @@ workflows:
       - deploy:
           requires:
             - build
-          filters:
-            branches:
-              only: master
+  second_workflow:
+    jobs:
+      - build
+      - deploy:
+          type: approval  
+          requires:
+            - build            
+
 
 version: 2
 jobs:
@@ -23,11 +28,8 @@ jobs:
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/postgres:9.4
 #       parallelism: 3
-#fresh commit 
 
     working_directory: ~/repo
-    
-    # test test
 
     steps:
       - checkout
@@ -46,7 +48,6 @@ jobs:
             python3 -m venv venv
             . venv/bin/activate
             pip3 install -r requirements.txt
-
       - save_cache:
           paths:
             - ./venv
@@ -61,7 +62,6 @@ jobs:
             
             python3 test.py
            
-
       - store_test_results:
           path: test-reports     
 
@@ -74,14 +74,12 @@ jobs:
       - image: buildpack-deps:trusty
     steps:
       - checkout
-      - run: echo "deploy job"
-          ##name: Deploy Master to Heroku
-          ##command: |
- ##           git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
-          
+      - run:
+          name: Deploy Master to Heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
             
             #added a comment to push a fresh commit 
             #trying to trigger a build 
-            
             
             
