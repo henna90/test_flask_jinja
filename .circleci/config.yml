@@ -54,9 +54,9 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            cd tests
-            python3 test_server.py
-            python3 test_helpers.py
+            
+            python3 test.py
+           
 
       - store_test_results:
           path: test-reports     
