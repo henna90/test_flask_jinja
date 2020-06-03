@@ -2,7 +2,7 @@
 # import server
 import unittest
 import xmlrunner
-import helpers
+import helpers from './helpers.py'
 
 class TestHelpers(unittest.TestCase):
     """unit tests: helper functions."""
