@@ -59,9 +59,9 @@ jobs:
       - store_test_results:
           path: user     
 
-      - store_artifacts:
-          path: user
-          destination: user
+#       - store_artifacts:
+#           path: user
+#           destination: user
 
   deploy:
     docker:
