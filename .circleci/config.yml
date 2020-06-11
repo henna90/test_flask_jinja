@@ -47,13 +47,16 @@ jobs:
             - ./venv
 #           key: v1-dependencies-{{ checksum "requirements.txt" }}
           key: v1-dependencies-{{ checksum .Environment.requirements }}
-
+      - run: pwd
+      - run: cd user
+      
       - run:
           name: run tests
           command: |
             . venv/bin/activate
          #   circleci tests glob "tests.py" | circleci tests split --split-by=timings
-            pwd
+    
+            python3 test.py
             
            
       - store_test_results:
