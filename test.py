@@ -5,7 +5,7 @@ import helpers
 import user
 
         
-class TestUser(unittest.TestCase):
+class User(unittest.TestCase):
     """unit tests: user function."""
 
     def test_user(self):
