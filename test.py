@@ -16,7 +16,7 @@ class TestHelpers(unittest.TestCase):
     def a(self):
         """Test adder function."""
 
-        self.assertEqual(helpers.is_person('Henna'), True)
+        self.assertEqual(helpers.is_person('User'), True)
     def b(self):
         """Test adder function."""
 
