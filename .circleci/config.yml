@@ -60,7 +60,13 @@ jobs:
           name: test
           command: |
             . venv/bin/activate 
-            pwd           
+            pwd 
+            
+      - run:
+          name: echo hello world 
+          command: |
+            echo "hello world"
+                          
             
            
       - store_test_results:
