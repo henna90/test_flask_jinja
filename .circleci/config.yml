@@ -29,32 +29,32 @@ jobs:
       - checkout
 
       # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum .Environment.requirements }}
-            #             - v1-dependencies-{{ checksum "requirements.txt" }}
-            # fallback to using the latest cache if no exact match is found
+#       - restore_cache:
+#           keys:
+#             - v1-dependencies-{{ checksum .Environment.requirements }}
+#                         - v1-dependencies-{{ checksum "requirements.txt" }}
+#             fallback to using the latest cache if no exact match is found
 #             - v1-dependencies-
 
-      - run:
-          name: install dependencies
-          command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            pip3 install -r requirements.txt
-      - save_cache:
-          paths:
-            - ./venv
-#           key: v1-dependencies-{{ checksum "requirements.txt" }}
-          key: v1-dependencies-{{ checksum .Environment.requirements }}
-#       - run: pwd
-#       - run: cd user
+#       - run:
+#           name: install dependencies
+#           command: |
+#             python3 -m venv venv
+#             . venv/bin/activate
+#             pip3 install -r requirements.txt
+#       - save_cache:
+#           paths:
+#             - ./venv
+# #           key: v1-dependencies-{{ checksum "requirements.txt" }}
+#           key: v1-dependencies-{{ checksum .Environment.requirements }}
+# #       - run: pwd
+# #       - run: cd user
       
-      - run:
-          name: run tests
-          command: |
-            . venv/bin/activate 
-            python3 test.py
+#       - run:
+#           name: run tests
+#           command: |
+#             . venv/bin/activate 
+#             python3 test.py
             
       - run:
           name: test
@@ -69,25 +69,25 @@ jobs:
                           
             
            
-      - store_test_results:
-          path: test-reports     
+#       - store_test_results:
+#           path: test-reports     
 
-      - store_artifacts:
-          path: test-reports
-          destination: test-reports
+#       - store_artifacts:
+#           path: test-reports
+#           destination: test-reports
 
   deploy:
     docker:
       - image: buildpack-deps:trusty
     steps:
       - checkout
-      - run:
-          name: Deploy Master to Heroku
-          command: |
-            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+#       - run:
+#           name: Deploy Master to Heroku
+#           command: |
+#             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
             
-            #added a comment to push a fresh commit 
-            #trying to trigger a build 
+#             #added a comment to push a fresh commit 
+#             #trying to trigger a build 
             
             
                   # test test
