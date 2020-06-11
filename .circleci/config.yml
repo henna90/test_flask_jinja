@@ -53,9 +53,7 @@ jobs:
       - run:
           name: run tests
           command: |
-            . venv/bin/activate
-            circleci tests glob "test.py" | circleci tests split --split-by=timings
-            
+            . venv/bin/activate 
             python3 test.py
            
             
