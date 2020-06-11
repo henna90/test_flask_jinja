@@ -8,9 +8,11 @@ import user
 class User(unittest.TestCase):
     """unit tests: user function."""
 
-    def test_user(self):
+    def test_user():
         """Test user function.""" 
-        self.assertEqual(user.user(self), 'user')
+        self.assertEqual(user.user(), 'user')
+        
+        # wow cant remember python
 
 class TestHelpers(unittest.TestCase):
     """unit tests: helper functions."""
