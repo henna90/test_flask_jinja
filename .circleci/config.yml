@@ -29,25 +29,25 @@ jobs:
       - checkout
 
       # Download and cache dependencies
-#       - restore_cache:
-#           keys:
-#             - v1-dependencies-{{ checksum .Environment.requirements }}
-#                         - v1-dependencies-{{ checksum "requirements.txt" }}
-#             fallback to using the latest cache if no exact match is found
-#             - v1-dependencies-
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum .Environment.requirements }}
+                        - v1-dependencies-{{ checksum "requirements.txt" }}
+            fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
 
-#       - run:
-#           name: install dependencies
-#           command: |
-#             python3 -m venv venv
-#             . venv/bin/activate
-#             pip3 install -r requirements.txt
-#       - save_cache:
-#           paths:
-#             - ./venv
-# #           key: v1-dependencies-{{ checksum "requirements.txt" }}
-#           key: v1-dependencies-{{ checksum .Environment.requirements }}
-# #       - run: pwd
+      - run:
+          name: install dependencies
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip3 install -r requirements.txt
+      - save_cache:
+          paths:
+            - ./venv
+#           key: v1-dependencies-{{ checksum "requirements.txt" }}
+          key: v1-dependencies-{{ checksum .Environment.requirements }}
+      - run: pwd
 # #       - run: cd user
       
 #       - run:
@@ -56,11 +56,11 @@ jobs:
 #             . venv/bin/activate 
 #             python3 test.py
             
-      - run:
-          name: test
-          command: |
-            . venv/bin/activate 
-            pwd 
+#       - run:
+#           name: test
+#           command: |
+#             . venv/bin/activate 
+#             pwd 
             
       - run:
           name: echo hello world 
