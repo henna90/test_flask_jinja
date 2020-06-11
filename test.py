@@ -10,7 +10,7 @@ class TestUser(unittest.TestCase):
 
     def test_user(self):
         """Test user function.""" 
-        self.assertEqual('user'.user(), 'user')
+        self.assertEqual(user.user(self), 'user')
 
 class TestHelpers(unittest.TestCase):
     """unit tests: helper functions."""
