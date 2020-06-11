@@ -53,8 +53,8 @@ jobs:
           command: |
             . venv/bin/activate
          #   circleci tests glob "tests.py" | circleci tests split --split-by=timings
-            cd user
-            python3 test.py
+            cd user && python3 test.py
+            
            
       - store_test_results:
           path: test-reports     
