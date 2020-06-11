@@ -1,0 +1,6 @@
+def user():
+    return "user"
+    
+    
+    
+ 
