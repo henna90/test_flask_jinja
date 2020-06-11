@@ -2,8 +2,15 @@ import server
 import unittest
 import xmlrunner
 import helpers
+import user
 
+        
+class TestUser(unittest.TestCase):
+    """unit tests: user function."""
 
+    def test_user(self):
+        """Test user function.""" 
+        self.assertEqual('user'.user(), 'user')
 
 class TestHelpers(unittest.TestCase):
     """unit tests: helper functions."""
