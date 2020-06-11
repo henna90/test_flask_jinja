@@ -52,9 +52,9 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            circleci tests glob "tests.py" | circleci tests split --split-by=timings
+         #   circleci tests glob "tests.py" | circleci tests split --split-by=timings
             
-            python3 test.py
+            python3 user/test.py
            
       - store_test_results:
           path: test-reports     
