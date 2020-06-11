@@ -57,11 +57,11 @@ jobs:
             python3 test.py
            
       - store_test_results:
-          path: test-reports     
+          path: user     
 
       - store_artifacts:
-          path: test-reports
-          destination: test-reports
+          path: user
+          destination: user
 
   deploy:
     docker:
