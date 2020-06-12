@@ -57,11 +57,11 @@ jobs:
       
       
       
-      - run:
-          name: run tests
-          command: |
-            . venv/bin/activate 
-            python3 test.py
+#       - run:
+#           name: run tests
+#           command: |
+#             . venv/bin/activate 
+#             python3 test.py
     
             
 #       - run:
@@ -80,9 +80,9 @@ jobs:
       - store_test_results:
           path: test-reports     
 
-#       - store_artifacts:
-#           path: test-reports
-#           destination: test-reports
+      - store_artifacts:
+          path: test-reports
+          destination: test-reports
 
   deploy:
     docker:
