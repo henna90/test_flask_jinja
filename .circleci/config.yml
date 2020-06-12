@@ -50,6 +50,8 @@ jobs:
           
       - run: pwd  
       - run: cd user
+      - run: pwd       
+      
       
       - run:
           name: run tests
