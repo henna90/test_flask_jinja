@@ -51,11 +51,11 @@ jobs:
       - run: pwd  
       - run: cd user
       
-#       - run:
-#           name: run tests
-#           command: |
-#             . venv/bin/activate 
-#             python3 test.py
+      - run:
+          name: run tests
+          command: |
+            . venv/bin/activate 
+            python3 test.py
             
 #       - run:
 #           name: test
@@ -70,8 +70,8 @@ jobs:
                           
             
            
-#       - store_test_results:
-#           path: test-reports     
+      - store_test_results:
+          path: user     
 
 #       - store_artifacts:
 #           path: test-reports
