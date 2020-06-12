@@ -49,7 +49,11 @@ jobs:
           key: v1-dependencies-{{ checksum .Environment.requirements }}
           
       - run: pwd  
-      - run: cd user && . venv/bin/activate && python3 test.py
+      - run:
+          name: run user test
+          command: |
+            . venv/bin/activate
+            cd user && python3 test.py
       
       
       
