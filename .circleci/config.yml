@@ -78,11 +78,11 @@ jobs:
             
            
       - store_test_results:
-          path: test-reports     
+          path: /home/circleci/repo/user/test-reports   
 
       - store_artifacts:
-          path: test-reports
-          destination: test-reports
+          path: /home/circleci/repo/user/test-reports
+          destination: /home/circleci/repo/user/test-reports
 
   deploy:
     docker:
