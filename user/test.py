@@ -12,7 +12,7 @@ import helpers
 #         """Test user function.""" 
 #         self.assertEqual(user.user(), 'user')
         
-class TestHelpers(unittest.TestCase):
+class User(unittest.TestCase):
     """unit tests: helper functions."""
 
     def test_is_person(self):
