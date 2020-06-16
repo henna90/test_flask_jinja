@@ -2,10 +2,17 @@ workflows:
   version: 2
   build-deploy:
     jobs:
-      - build
+      - build:
+          filters:
+            tags:
+              only: /^v[0-9]+(\.[0-9]+){2}$/      
       - deploy:
           requires:
-            - build
+            - build:
+                filters:
+                  tags:
+                    only: /^v[0-9]+(\.[0-9]+){2}$/
+
 #   second_workflow:
 #     jobs:
 #       - build
@@ -73,6 +80,9 @@ jobs:
     docker:
       - image: buildpack-deps:trusty
     steps:
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum .Environment.requirements }}
       - checkout
 #       - run:
 #           name: Deploy Master to Heroku
