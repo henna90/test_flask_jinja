@@ -12,4 +12,15 @@ def is_person(person):
         return True
     else:
         return False 
+    
+    
+def wait(num):
+    if isinstance(num, int):
+        time.sleep(num)
+        return True
+    
+    
+    else:
+        time.sleep(num)
+        return False
 
