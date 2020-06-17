@@ -30,12 +30,27 @@ class TestHelpers(unittest.TestCase):
     def test_wait(self):
         """Test wait function."""
             
-        self.assertEqual(helpers.wait(10), True)    
-      
+        self.assertEqual(helpers.wait(10), True)  
+    def test_wait(self):
+        """Test wait function."""
             
-        
-        
-
+        self.assertEqual(helpers.wait(100), True)   
+    def test_wait(self):
+        """Test wait function."""
+            
+        self.assertEqual(helpers.wait(50), True)        
+    def test_wait(self):
+        """Test wait function."""
+            
+        self.assertEqual(helpers.wait(15), True)  
+    def test_wait(self):
+        """Test wait function."""
+            
+        self.assertEqual(helpers.wait(32), True)   
+    def test_wait(self):
+        """Test wait function."""
+            
+        self.assertEqual(helpers.wait(73), True)        
 
 class TestFlaskRoutes(unittest.TestCase):
     """Test Flask routes."""
