@@ -31,23 +31,23 @@ class TestHelpers(unittest.TestCase):
         """Test wait function."""
             
         self.assertEqual(helpers.wait(10), True)  
-    def test_wait(self):
+    def test_wait1(self):
         """Test wait function."""
             
         self.assertEqual(helpers.wait(100), True)   
-    def test_wait(self):
+    def test_wait2(self):
         """Test wait function."""
             
         self.assertEqual(helpers.wait(50), True)        
-    def test_wait(self):
+    def test_wait3(self):
         """Test wait function."""
             
         self.assertEqual(helpers.wait(15), True)  
-    def test_wait(self):
+    def test_wait4(self):
         """Test wait function."""
             
         self.assertEqual(helpers.wait(32), True)   
-    def test_wait(self):
+    def test_wait5(self):
         """Test wait function."""
             
         self.assertEqual(helpers.wait(73), True)        
