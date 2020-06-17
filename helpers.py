@@ -1,3 +1,4 @@
+import time
 def is_person(person):
     """validates that input is not an empty string
 
