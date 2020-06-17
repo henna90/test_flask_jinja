@@ -17,9 +17,7 @@ def is_person(person):
 def wait(num):
     if isinstance(num, int):
         time.sleep(num)
-        return True
-    
-    
+        return True 
     else:
         time.sleep(num)
         return False
