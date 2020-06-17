@@ -25,7 +25,13 @@ class TestHelpers(unittest.TestCase):
     def z(self):
         """Test adder function."""
 
-        self.assertEqual(helpers.is_person('Henna'), True)        
+        self.assertEqual(helpers.is_person('Henna'), True)     
+    def test_wait(self):
+        """Test wait function."""
+            
+        self.assertEqual(helpers.wait(10), True)    
+      
+            
         
         
 
