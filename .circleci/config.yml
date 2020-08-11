@@ -61,6 +61,14 @@ jobs:
             - ./venv
 #           key: v1-dependencies-{{ checksum "requirements.txt" }}
           key: v1-dependencies-{{ checksum .Environment.requirements }}
+          
+          
+      - run:
+          name: install allure
+          command: |
+            sudo apt-add-repository ppa:qameta/allure
+            sudo apt-get update 
+            sudo apt-get install allure      
 
       - run:
           name: run tests
@@ -69,6 +77,8 @@ jobs:
             circleci tests glob "test.py" | circleci tests split --split-by=timings
             
             python3 test.py
+            
+            allure serve /home/circleci/repo/test-reports
            
       - store_test_results:
           path: test-reports     
