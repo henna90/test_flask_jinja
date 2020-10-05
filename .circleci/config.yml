@@ -45,14 +45,7 @@ jobs:
             - ./venv
 #           key: v1-dependencies-{{ checksum "requirements.txt" }}
           key: v1-dependencies-{{ checksum .Environment.requirements }}
-          
-          
-      - run:
-          name: install allure
-          command: |
-            sudo apt-add-repository ppa:qameta/allure
-            sudo apt-get update 
-            sudo apt-get install allure      
+           
 
       - run:
           name: run tests
