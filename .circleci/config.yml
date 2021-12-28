@@ -2,10 +2,26 @@ workflows:
   version: 2
   build-deploy:
     jobs:
-      - build  
+      - build:
+         filters:
+           tags:
+             only: /^v[0-9]+(\.[0-9]+){2}$/      
       - deploy:
+          filters:
+            tags:
+              only: /^v[0-9]+(\.[0-9]+){2}$/
           requires:
             - build
+
+
+#   second_workflow:
+#     jobs:
+#       - build
+#       - deploy:
+# #           type: approval  
+#           requires:
+#             - build            
+
 
 version: 2
 jobs:
@@ -45,7 +61,6 @@ jobs:
             - ./venv
 #           key: v1-dependencies-{{ checksum "requirements.txt" }}
           key: v1-dependencies-{{ checksum .Environment.requirements }}
-           
 
       - run:
           name: run tests
@@ -54,8 +69,6 @@ jobs:
             circleci tests glob "test.py" | circleci tests split --split-by=timings
             
             python3 test.py
-            
-            allure serve /home/circleci/repo/test-reports
            
       - store_test_results:
           path: test-reports     
@@ -78,6 +91,3 @@ jobs:
 #             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
             
       # removed deploy commands 
-      
-            
-                        
